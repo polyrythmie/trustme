@@ -8,6 +8,7 @@ if __name__ == '__main__':
         author_email='rynelfa9sa@gmail.com',
         install_requires = (
             'abjad',
+            'consort',
             ),
         name='trustme',
         packages=(
