@@ -1,27 +1,46 @@
 # -*- coding: utf-8 -*-
-from abjad.tools import abctools
-from abjad.tools import lilypondfiletools
-from trustme.tools import ScoreTemplate
+import consort
+import trustme
 
 
-class SegmentMaker(abctools.AbjadObject):
+class SegmentMaker(consort.SegmentMaker):
 
     ### INITIALIZER ###
 
-    def __init__(self):
-        self.score_template = ScoreTemplate()
+    def __init__(
+        self,
+        annotate_colors=None,
+        annotate_phrasing=None,
+        annotate_timespans=None,
+        desired_duration_in_seconds=None,
+        discard_final_silence=None,
+        maximum_meter_run_length=None,
+        name=None,
+        omit_stylesheets=None,
+        permitted_time_signatures=None,
+        repeat=None,
+        score_template=None,
+        settings=None,
+        tempo=None,
+        timespan_quantization=None,
+        ):
+        score_template = score_template or trustme.tools.ScoreTemplate
+        consort.SegmentMaker.__init__(
+            self,
+            annotate_colors=annotate_colors,
+            annotate_phrasing=annotate_phrasing,
+            annotate_timespans=annotate_timespans,
+            desired_duration_in_seconds=desired_duration_in_seconds,
+            discard_final_silence=discard_final_silence,
+            maximum_meter_run_length=maximum_meter_run_length,
+            name=name,
+            omit_stylesheets=omit_stylesheets,
+            permitted_time_signatures=permitted_time_signatures,
+            repeat=repeat,
+            score_template=score_template,
+            settings=settings,
+            tempo=tempo,
+            timespan_quantization=timespan_quantization,
+            )
 
     ### SPECIAL METHODS ###
-
-    def __call__(
-        self,
-        segment_metadata=None,
-        previous_segment_metadata=None,
-        ):
-        score = self.score_template()
-        score['Example Voice'].extend("c'4 ( d'4 e'4 f'4 )")
-        lilypond_file = lilypondfiletools.make_basic_lilypond_file(
-            score,
-            includes=['../../stylesheets/stylesheet.ily'],
-            )
-        return lilypond_file, segment_metadata
