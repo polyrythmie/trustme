@@ -12,7 +12,7 @@
         \context TimeSignatureContext = "Time Signature Context" {
             {
                 \tempo 4=60
-                \time 4/4
+                \time 5/4
                 \mark \markup {
                     \fontsize
                         #-3
@@ -30,63 +30,64 @@
                     {
                         % [Player 1 Default Voice] Measure 1
                         {
-                            c'1
+                            \stopStaff
+                            \once \override Staff.StaffSymbol.line-positions = #'(0)
+                            \startStaff
+                            R1 * 5/2
+                            \stopStaff
+                            \startStaff
                         }
-                        % [Player 1 Default Voice] Measure 2
-                        {
-                            c'1
-                        }
+                    }
+                    {
                         % [Player 1 Default Voice] Measure 3
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 4
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 5
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 6
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 7
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 8
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 9
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 10
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 11
                         {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                         % [Player 1 Default Voice] Measure 12
                         {
-                            c'1
-                        }
-                        % [Player 1 Default Voice] Measure 13
-                        {
-                            c'1
-                        }
-                        % [Player 1 Default Voice] Measure 14
-                        {
-                            c'1
-                        }
-                        % [Player 1 Default Voice] Measure 15
-                        {
-                            c'1
+                            c'2.
+                            c'2 \repeatTie
                         }
                     }
                 }
