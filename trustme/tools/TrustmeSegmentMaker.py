@@ -3,7 +3,7 @@ import consort
 import trustme
 
 
-class SegmentMaker(consort.SegmentMaker):
+class TrustmeSegmentMaker(consort.SegmentMaker):
 
     ### INITIALIZER ###
 
@@ -24,7 +24,7 @@ class SegmentMaker(consort.SegmentMaker):
         tempo=None,
         timespan_quantization=None,
         ):
-        score_template = score_template or trustme.tools.ScoreTemplate
+        score_template = score_template or trustme.tools.TrustmeScoreTemplate()
         consort.SegmentMaker.__init__(
             self,
             annotate_colors=annotate_colors,
