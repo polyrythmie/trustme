@@ -40,20 +40,20 @@ clock_start_specifier = consort.MusicSpecifier(
 
 segment_maker.add_setting(
     timespan_identifier=clock_start_timespan,
-    player_1=clock_start_specifier,
-    player_2=clock_start_specifier,
-    player_3=clock_start_specifier,
+    player_1_keyboard=clock_start_specifier,
+    player_2_keyboard=clock_start_specifier,
+    player_3_keyboard=clock_start_specifier,
     )
 
 # BEGIN
-
-segment_maker.add_setting(
-    timespan_identifier=abjad.timespantools.Timespan(
-        start_offset=clock_start_timespan.stop_offset,
-        stop_offset=None,
-        ),
-    timespan_maker=consort.FloodedTimespanMaker(),
-    player_1=consort.MusicSpecifier(
-        rhythm_maker=abjad.rhythmmakertools.NoteRhythmMaker(),
-        ),
-    )
+#
+# segment_maker.add_setting(
+#     timespan_identifier=abjad.timespantools.Timespan(
+#         start_offset=clock_start_timespan.stop_offset,
+#         stop_offset=None,
+#         ),
+#     timespan_maker=consort.FloodedTimespanMaker(),
+#     player_1=consort.MusicSpecifier(
+#         rhythm_maker=abjad.rhythmmakertools.NoteRhythmMaker(),
+#         ),
+#     )
